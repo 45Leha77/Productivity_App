@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Productivity app</title>
+</head>
+
+<body id="task-list">
+  <header class="task-list__header header">
+    <div class="header__top top-header">
+      <div class="top-header__container top-header__container_flex-end">
+      <div class="top-header__fixed-header-icon hide"><img src="/images/fixed_header_icon.png" alt="fixed-header-icon.png"></div>
+        <div class="top-header__menu menu-top-header">
+      <div class="menu-top-header__delete delete-menu-top-header">
+        <a style="all: unset">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="6" width="12" height="13" stroke="#CACACA" stroke-width="2" />
+        <rect x="7" y="9" width="2" height="7" fill="#CACACA" />
+        <rect x="18" y="1" width="2" height="16" transform="rotate(90 18 1)" fill="#CACACA" />
+        <path d="M7.14286 0L6 1H14L12.8571 0H7.14286Z" fill="#CACACA" />
+        <rect x="11" y="9" width="2" height="7" fill="#CACACA" />
+      </svg>
+      <div class="delete-menu-top-header__number"></div>
+      </a>
+      </div>
+      <div class="menu-top-header__global-list"><a href="task-list.html"><img src="/images/Global_List.png" alt="Global_List.png"></a></div>
+      <div class="menu-top-header__statistics"><a href="report.html"><img src="/images/Statistics.png" alt="Statistics.png"></a></div>
+      <div class="menu-top-header__settings"><a href="settings.html"><img src="/images/Settings.png" alt="Settings.png"></a></div>
+      </div>
+    </div>
+    </div>
+    <div class="header__body body-header">
+    <div class="body-header__container">
+    <div class="body-header__daily-task-list daily-task-list ">
+      <a style="text-decoration: none;" href="task-list.html"><h1 class="daily-task-list__title">Daily Task List</h1></a>
+      <div class="daily-task-list__add-icon">
+        +
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="header__tabs tabs-header">
+  <div class="tabs-header__container">
+    <div class="tabs-header__items items-tabs-header">
+      <a style="all: unset"><span id="ToDo" class="items-tabs-header__item items-tabs-header__item_active">To Do</span></a>|<a style="all: unset"><span id="Done" class="items-tabs-header__item">Done</span></a>
+    </div>
+  </div>
+  </div>
+  </header>
+  <main class="task-list__main main">
+    <div class="main__container">
+      <div class="main__tasks">
+      </div>
+      <div class="main__add-task add-task-main hide">
+        <div class="add-task-main__icon"><img src="/images/tomato-add.svg" alt="tomato-add.svg"></div>
+        <div class="add-task-main__text">Add your task</div>
+      </div>
+      <div class="main__info-page info-page-main hide">
+        <div class="info-page-main__text">Task added, <br>
+        move it to the top 5 in daily task list</div>
+        <div class="info-page-main__icon"> <svg aria-hidden="true" focusable="false" class="svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 504c137 0 248-111 248-248S393 8 256 8 8 119 8 256s111 248 248 248zm0-448c110.5 0 200 89.5 200 200s-89.5 200-200 200S56 366.5 56 256 145.5 56 256 56zm20 328h-40c-6.6 0-12-5.4-12-12V256h-67c-10.7 0-16-12.9-8.5-20.5l99-99c4.7-4.7 12.3-4.7 17 0l99 99c7.6 7.6 2.2 20.5-8.5 20.5h-67v116c0 6.6-5.4 12-12 12z"></path></svg></div>
+      </div>
+    </div>
+  </main>
+  <div class="task-list__global-list global-list">
+    <div class="global-list__container">
+    <div class="global-list__top top-global-list">
+      <div class="top-global-list__header">
+    <span class="header-top-global-list__text">Global list</span>
+    <a class="header-top-global-list__icon"><svg aria-hidden="true" focusable="false"
+      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+      <path fill="currentColor"
+        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+      </path>
+    </svg></a>
+    </div>
+      <div class="top-global-list__tabs hide">
+        <span id="all" class="top-global-list__tab top-global-list__tab_active">All</span>|<span id="urgent" class="top-global-list__tab">Urgent</span>|<span id="high" class="top-global-list__tab">High</span>|<span id="middle" class="top-global-list__tab">Middle</span>|<span id="low" class="top-global-list__tab">Low</span>
+      </div>
+    </div>
+    <div class="global-list__sections hide">
+    <div id="section-work" class="global-list__section section hide">
+      <h2 class="section__title">WORK</h2>
+    </div>
+    <div id="section-education" class="global-list__section section hide">
+      <h2 class="section__title">EDUCATION</h2>
+    </div>
+    <div id="section-hobby" class="global-list__section section hide">
+          <h2 class="section__title">HOBBY</h2>
+    </div>
+    <div id="section-sport" class="global-list__section section hide">
+          <h2 class="section__title">SPORT</h2>
+    </div>
+    <div id="section-other" class="global-list__section section hide">
+          <h2 class="section__title">OTHER</h2>
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="modal hide">
+  <div class="modal__header header-modal">
+    <div class="header-modal__container">
+    <div class="header-modal__top top-modal-header">
+      <div class="top-modal-header__accept-icon"><svg aria-hidden="true" focusable="false" class="svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"></path></svg></div>
+      <div class="top-modal-header__decline-icon"><svg aria-hidden="true" focusable="false" class="svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm101.8-262.2L295.6 256l62.2 62.2c4.7 4.7 4.7 12.3 0 17l-22.6 22.6c-4.7 4.7-12.3 4.7-17 0L256 295.6l-62.2 62.2c-4.7 4.7-12.3 4.7-17 0l-22.6-22.6c-4.7-4.7-4.7-12.3 0-17l62.2-62.2-62.2-62.2c-4.7-4.7-4.7-12.3 0-17l22.6-22.6c4.7-4.7 12.3-4.7 17 0l62.2 62.2 62.2-62.2c4.7-4.7 12.3-4.7 17 0l22.6 22.6c4.7 4.7 4.7 12.3 0 17z"></path></svg></div>
+      </div>
+    <div class="header-modal__body body-modal-header">
+      <div class="body-modal-header__title"><span></span></div>
+    </div>
+    </div>
+  </div>
+  <div class="modal__body body-modal">
+    <div class="body-modal__container">
+    <div class="body-modal__sections">
+      <div class="body-modal__section section modal-section-title">
+      <div class="section__name">Title</div>
+      <div class="section__content"><input autocomplete='off' type='text' name='form[]' data-error='Error' placeholder='Add title here' class='input' id="task-title-input"></div>
+      </div>
+      <div class="body-modal__section section modal-section-desrciption">
+        <div class="section__name">Description</div>
+        <div class="section__content"><input autocomplete='off' type='text' name='form[]' data-error='Error' placeholder='Add description here' class='input' id="task-description-input"></div>
+      </div>
+      <div class="body-modal__section section modal-section-category">
+        <div class="section__name">Category</div>
+        <div class="section__content">
+          <div class="section__item"><input type="radio" name="modal-category-input" class="modal-category-input" id="work"><span class="span">Work</span></div>
+          <div class="section__item"><input type="radio" name="modal-category-input" class="modal-category-input" id="education"><span class="span">Education</span></div>
+          <div class="section__item"><input type="radio" name="modal-category-input" class="modal-category-input" id="hobby"><span class="span">Hobby</span></div>
+          <div class="section__item"><input type="radio" name="modal-category-input" class="modal-category-input" id="sport"><span class="span">Sport</span></div>
+          <div class="section__item"><input type="radio" name="modal-category-input" class="modal-category-input" id="other"><span class="span">Other</span></div>
+        </div>
+      </div>
+      <div class="body-modal__section section modal-section-deadline">
+        <div class="section__name">Deadline</div>
+        <div class="section__content"><input autocomplete='off' type='date' name='form[]' data-error='Error' placeholder='May 2, 2022' class='input' id="task-deadline-input"></div>
+      </div>
+      <div class="body-modal__section section modal-section-estimation">
+        <div class="section__name">ESTIMATION</div>
+        <div class="section__content"></div>
+      </div>
+      <div class="body-modal__section section modal-section-priority">
+        <div class="section__name">PRIORITY</div>
+        <div class="section__content">
+          <div class="section__item"><input type="radio" id="urgent" name="modal-priority-input" class="modal-priority-input"><span class="span">Urgent</span></div>
+          <div class="section__item"><input type="radio" id="high" name="modal-priority-input" class="modal-priority-input"><span class="span">High</span></div>
+          <div class="section__item"><input type="radio" id="middle" name="modal-priority-input" class="modal-priority-input"><span class="span">Middle</span></div>
+          <div class="section__item"><input type="radio" id="low" name="modal-priority-input" class="modal-priority-input"><span class="span">Low</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="body-modal__detele delete-modal-body hide">
+      <div class="delete-modal-body__text">Are you sure you want to remove selected task(s)?</div>
+      <div class="delete-modal-body__buttons">
+        <button type="button" class="delete-modal-body__cancel-button">Cancel</button>
+        <button type="button" class="delete-modal-body__remove-button">Remove</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script src="/bundle.js"></script>
+</body>
+
+</html>

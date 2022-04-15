@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Productivity app</title>
+</head>
+<body id="report">
+<header class="report__header header">
+    <div class="header__top top-header">
+        <div class="top-header__container top-header__container">
+            <div class="top-header__fixed-header-icon hide"><img src="/images/fixed_header_icon.png"
+                    alt="fixed-header-icon.png"></div>
+            <div class="top-header__menu menu-top-header">
+                <div class="menu-top-header__global-list"><a href="task-list.html"><img src="/images/Global_List.png"
+                            alt="Global_List.png"></a></div>
+                <div class="menu-top-header__statistics"><a href="report.html"><img src="/images/Statistics.png"
+                            alt="Statistics.png"></a></div>
+                <div class="menu-top-header__settings"><a href="settings.html"><img src="/images/Settings.png"
+                            alt="Settings.png"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="header__body body-header">
+        <div class="body-header__container">
+            <div class="body-header__daily-task-list daily-task-list">
+                <h1 class="daily-task-list__title">Report</h1>
+            </div>
+        </div>
+    </div>
+    <div class="header__tabs tabs-header">
+        <div class="tabs-header__container">
+            <div class="tabs-header__items">
+                <span id="day" class="items-tabs-header__item items-tabs-header__item_active">Day</span>|<span id="week" class="items-tabs-header__item">Week</span>|<span id="month" class="items-tabs-header__item">Month</span>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="report__main main-report">
+    <div class="main-report__container">
+        <div class="main-report__arrow-icon"><svg aria-hidden="true" focusable="false" class="svg" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></div>
+        <div class="main-report__body">
+            <div class="main-report__graph graph-main-report">
+                <div class="graph-main-report__main-part">
+                    <ul class="graph-main-report__column-numbers">
+                        <li class="graph-main-report__column-number">0</li>
+                        <li class="graph-main-report__column-number">2</li>
+                        <li class="graph-main-report__column-number">4</li>
+                        <li class="graph-main-report__column-number">6</li>
+                        <li class="graph-main-report__column-number">8</li>
+                        <li class="graph-main-report__column-number">10</li>
+                    </ul>
+                    <div class="graph-main-report__graph graph">
+                        <div class="graph__row"></div>
+                        <div class="graph__row"></div>
+                        <div class="graph__row"></div>
+                        <div class="graph__row"></div>
+                        <div class="graph__row"></div>
+                        <div class="graph__date-columns day-columns">
+                            <div id="day-graph-urgent" class="day-columns__item day-columns__item_urgent"></div>
+                            <div id="day-graph-high" class="day-columns__item day-columns__item_high"></div>
+                            <div id="day-graph-middle" class="day-columns__item day-columns__item_middle"></div>
+                            <div id="day-graph-low" class="day-columns__item day-columns__item_low"></div>
+                            <div id="day-graph-failed" class="day-columns__item day-columns__item_failed"></div>
+                        </div>
+                        <div class="graph__date-columns week-columns hide">
+                            <div class="week-columns__day">
+                                <div class="week-columns__done done-column">
+                                    <div id="week-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                    <div id="week-graph-high" class="done-column__item done-column__item_high"></div>
+                                    <div id="week-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                    <div id="week-graph-low" class="done-column__item done-column__item_low"></div>
+                                </div>
+                                <div id="week-graph-failed" class="week-columns__failed"></div>
+                            </div>
+                            <div class="week-columns__day">
+                                <div class="week-columns__done done-column">
+                                    <div id="week-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                    <div id="week-graph-high" class="done-column__item done-column__item_high"></div>
+                                    <div id="week-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                    <div id="week-graph-low" class="done-column__item done-column__item_low"></div>
+                                </div>
+                                <div id="week-graph-failed" class="week-columns__failed"></div>
+                            </div>
+                            <div class="week-columns__day">
+                                <div class="week-columns__done done-column">
+                                    <div id="week-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                    <div id="week-graph-high" class="done-column__item done-column__item_high"></div>
+                                    <div id="week-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                    <div id="week-graph-low" class="done-column__item done-column__item_low"></div>
+                                </div>
+                                <div id="week-graph-failed" class="week-columns__failed"></div>
+                            </div>
+                            <div class="week-columns__day">
+                                <div class="week-columns__done done-column">
+                                    <div id="week-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                    <div id="week-graph-high" class="done-column__item done-column__item_high"></div>
+                                    <div id="week-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                    <div id="week-graph-low" class="done-column__item done-column__item_low"></div>
+                                </div>
+                                <div id="week-graph-failed" class="week-columns__failed"></div>
+                            </div>
+                            <div class="week-columns__day">
+                                <div class="week-columns__done done-column">
+                                    <div id="week-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                    <div id="week-graph-high" class="done-column__item done-column__item_high"></div>
+                                    <div id="week-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                    <div id="week-graph-low" class="done-column__item done-column__item_low"></div>
+                                </div>
+                                <div id="week-graph-failed" class="week-columns__failed"></div>
+                            </div>
+                        </div>
+                        <div class="graph__date-columns month-columns hide">
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                            <div class="month-columns__column">
+                                <div id="month-graph-urgent" class="done-column__item done-column__item_urgent"></div>
+                                <div id="month-graph-high" class="done-column__item done-column__item_high"></div>
+                                <div id="month-graph-middle" class="done-column__item done-column__item_middle"></div>
+                                <div id="month-graph-low" class="done-column__item done-column__item_low"></div>
+                                <div id="month-graph-failed" class="done-column__item done-column__item_failed"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="graph-main-report__day-rows-names graph-main-report__day-rows-names-day">
+                    <li class="graph-main-report__day-row-name">Urgent</li>
+                    <li class="graph-main-report__day-row-name">High</li>
+                    <li class="graph-main-report__day-row-name">Middle</li>
+                    <li class="graph-main-report__day-row-name">Low</li>
+                    <li class="graph-main-report__day-row-name">Failed</li>
+                </ul>
+                <ul class="graph-main-report__day-rows-names graph-main-report__day-rows-names-week hide">
+                    <li class="graph-main-report__day-row-name">MON</li>
+                    <li class="graph-main-report__day-row-name">TUE</li>
+                    <li class="graph-main-report__day-row-name">WED</li>
+                    <li class="graph-main-report__day-row-name">THU</li>
+                    <li class="graph-main-report__day-row-name">FRI</li>
+                </ul>
+                <ul class="graph-main-report__day-rows-names graph-main-report__day-rows-names-month hide">
+                    <li class="graph-main-report__day-row-name num">1</li>
+                    <li class="graph-main-report__day-row-name num">2</li>
+                    <li class="graph-main-report__day-row-name num">3</li>
+                    <li class="graph-main-report__day-row-name num">4</li>
+                    <li class="graph-main-report__day-row-name num">5</li>
+                    <li class="graph-main-report__day-row-name num">6</li>
+                    <li class="graph-main-report__day-row-name num">7</li>
+                    <li class="graph-main-report__day-row-name num">8</li>
+                    <li class="graph-main-report__day-row-name num">9</li>
+                    <li class="graph-main-report__day-row-name two-num">10</li>
+                    <li class="graph-main-report__day-row-name two-num">11</li>
+                    <li class="graph-main-report__day-row-name two-num">12</li>
+                    <li class="graph-main-report__day-row-name two-num">13</li>
+                    <li class="graph-main-report__day-row-name two-num">14</li>
+                    <li class="graph-main-report__day-row-name two-num">15</li>
+                    <li class="graph-main-report__day-row-name two-num">16</li>
+                    <li class="graph-main-report__day-row-name two-num">17</li>
+                    <li class="graph-main-report__day-row-name two-num">18</li>
+                    <li class="graph-main-report__day-row-name two-num">19</li>
+                    <li class="graph-main-report__day-row-name two-num">20</li>
+                    <li class="graph-main-report__day-row-name two-num">21</li>
+                    <li class="graph-main-report__day-row-name two-num">22</li>
+                    <li class="graph-main-report__day-row-name two-num">23</li>
+                    <li class="graph-main-report__day-row-name two-num">24</li>
+                    <li class="graph-main-report__day-row-name two-num">25</li>
+                    <li class="graph-main-report__day-row-name two-num">26</li>
+                    <li class="graph-main-report__day-row-name two-num">27</li>
+                    <li class="graph-main-report__day-row-name two-num">28</li>
+                    <li class="graph-main-report__day-row-name two-num">29</li>
+                    <li class="graph-main-report__day-row-name two-num">30</li>
+                </ul>
+            </div>
+            <ul class="main-report__legend legend-main-report">
+                <li class="legend-main-report__item item-legend-main-report">
+                    <div class="item-legend-main-report__color item-legend-main-report__color_urgent"></div>
+                    <span class="item-legend-main-report__text">Urgent</span>
+                </li>
+                <li class="legend-main-report__item item-legend-main-report">
+                    <div class="item-legend-main-report__color item-legend-main-report__color_high"></div>
+                    <span class="item-legend-main-report__text">High</span>
+                </li>
+                <li class="legend-main-report__item item-legend-main-report">
+                    <div class="item-legend-main-report__color item-legend-main-report__color_middle"></div>
+                    <span class="item-legend-main-report__text">Middle</span>
+                </li>
+                <li class="legend-main-report__item item-legend-main-report">
+                    <div class="item-legend-main-report__color item-legend-main-report__color_low"></div>
+                    <span class="item-legend-main-report__text">Low</span>
+                </li>
+                <li class="legend-main-report__item item-legend-main-report">
+                    <div class="item-legend-main-report__color item-legend-main-report__color_failed"></div>
+                    <span class="item-legend-main-report__text">Failed</span>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="main-report__empty"></div>
+        
+    </div>
+</main>
+<div class="report__tabs tabs-report">
+    <div class="tabs-report__container">
+        <div class="tabs-report__items">
+            <span id="tabs-report-item__pomodoros" class="tabs-report__item">Pomodoros</span>|<span id="tabs-report-item__categories" class="tabs-report__item tabs-report__item_active">Tasks</span>
+        </div>
+    </div>
+</div>
+<script src="/bundle.js"></script>
+</body>
+</html>

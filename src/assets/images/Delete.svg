@@ -1,0 +1,7 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="6" width="12" height="13" stroke="#CACACA" stroke-width="2"/>
+<rect x="7" y="9" width="2" height="7" fill="#CACACA"/>
+<rect x="18" y="1" width="2" height="16" transform="rotate(90 18 1)" fill="#CACACA"/>
+<path d="M7.14286 0L6 1H14L12.8571 0H7.14286Z" fill="#CACACA"/>
+<rect x="11" y="9" width="2" height="7" fill="#CACACA"/>
+</svg>

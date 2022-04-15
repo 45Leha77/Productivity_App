@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Productivity app</title>
+</head>
+<body id="settings">
+    <header class="settings__header header">
+        <div class="header__top top-header">
+            <div class="top-header__container top-header__container">
+                <div class="top-header__fixed-header-icon hide"><img src="/images/fixed_header_icon.png"
+                        alt="fixed-header-icon.png"></div>
+                <div class="top-header__menu menu-top-header">
+                    <div class="menu-top-header__global-list"><a href="task-list.html"><img src="/images/Global_List.png"
+                                alt="Global_List.png"></a></div>
+                    <div class="menu-top-header__statistics"><a href="report.html"><img src="/images/Statistics.png"
+                                alt="Statistics.png"></a></div>
+                    <div class="menu-top-header__settings"><a href="settings.html"><img src="/images/Settings.png"
+                                alt="Settings.png"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="header__body body-header">
+            <div class="body-header__container">
+                <div class="body-header__daily-task-list daily-task-list">
+                    <h1 class="daily-task-list__title">Settings</h1>
+                </div>
+            </div>
+        </div>
+        <div class="header__tabs tabs-header">
+                <div class="tabs-header__container">
+                <div class="tabs-header__items">
+                    <span id="settings-tabs-header-item__pomodoros" class="items-tabs-header__item items-tabs-header__item_active">Pomodoros</span>|<span id="settings-tabs-header-item__categories" class="items-tabs-header__item">Categories</span>
+                </div>
+            </div>
+        </div>
+        <div class="header__tab-title tab-title">
+            <div class="tab-title__container">
+            <div class="tab-title__item">
+            Pomodoros settings
+            </div>
+            </div>
+        </div>
+    </header>
+    <div class="settings__main main-settings">
+        <div class="main-settings__container">
+            <div class="main-settings__categories">
+                <div id="work-time-category-settings" class="main-settings__category work-time-category-settings category-main-settings">
+                    <div class="category-main-settings__oval"></div>
+                    <div class="category-main-settings__body body-category-main-settings">
+                        <div class="body-category-main-settings__top">
+                        <div class="body-category-main-settings__title">Work Time</div>
+                        <div class="body-category-main-settings__value value-body-category-main-settings"><span class="value-body-category-main-settings__minus">-</span><span class="value-body-category-main-settings__number" id = 'settings__work-time'></span><span class="value-body-category-main-settings__plus">+</span></div>
+                        </div>
+                        <div class="value-body-category-main-settings__bottom">
+                        <div class="body-category-main-settings__info">Please select a value between 15 and 25 <span>minutes</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="work-iteration-category-settings" class="main-settings__category work-iteration-category-settings category-main-settings">
+                    <div class="category-main-settings__oval"></div>
+                    <div class="category-main-settings__body body-category-main-settings">
+                        <div class="body-category-main-settings__top">
+                            <div class="body-category-main-settings__title">Work Iteration</div>
+                            <div class="body-category-main-settings__value value-body-category-main-settings"><span
+                                    class="value-body-category-main-settings__minus">-</span><span
+                                    class="value-body-category-main-settings__number" id = 'settings__work-iteration'></span><span
+                                    class="value-body-category-main-settings__plus">+</span></div>
+                        </div>
+                        <div class="value-body-category-main-settings__bottom">
+                            <div class="body-category-main-settings__info">Please select a value between 2 and 5  <span>iterations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="short-break-category-settings" class="main-settings__category short-break-category-settings category-main-settings">
+                    <div class="category-main-settings__oval"></div>
+                    <div class="category-main-settings__body body-category-main-settings">
+                        <div class="body-category-main-settings__top">
+                            <div class="body-category-main-settings__title">Short Break</div>
+                            <div class="body-category-main-settings__value value-body-category-main-settings"><span
+                                    class="value-body-category-main-settings__minus">-</span><span
+                                    class="value-body-category-main-settings__number" id = 'settings__short-break'></span><span
+                                    class="value-body-category-main-settings__plus">+</span></div>
+                        </div>
+                        <div class="value-body-category-main-settings__bottom">
+                            <div class="body-category-main-settings__info">Please select a value between 3 and 5 <span>minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="long-break-category-settings" class="main-settings__category long-break-category-settings category-main-settings">
+                    <div class="category-main-settings__oval"></div>
+                    <div class="category-main-settings__body body-category-main-settings">
+                        <div class="body-category-main-settings__top">
+                            <div class="body-category-main-settings__title">Long Break</div>
+                            <div class="body-category-main-settings__value value-body-category-main-settings"><span
+                                    class="value-body-category-main-settings__minus">-</span><span
+                                    class="value-body-category-main-settings__number" id = 'settings__long-break'></span><span
+                                    class="value-body-category-main-settings__plus">+</span></div>
+                        </div>
+                        <div class="value-body-category-main-settings__bottom">
+                            <div class="body-category-main-settings__info">Please select a value between 15 and 30 <span>minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-settings__graph graph-main-settings">
+                <div class="graph-main-settings__title">Your cycle</div>
+                <div class="graph-main-settings__body body-graph-main-settings">
+                    <div class="body-graph-main-settings__top"></div>
+                    <div class="body-graph-main-settings__items">
+                    </div>
+                    <div class="body-graph-main-settings__bottom"></div>
+                </div>
+                <div class="graph-main-settings__buttons">
+                    <a style="text-decoration: none;" href="task-list.html"><button class="graph-main-settings-button graph-main-settings-goToTask-button">Go to Tasks</button></a>
+                    <button class="graph-main-settings-button graph-main-settings-save-button">Save</button>
+                </div>
+            </div>
+            <div class="main-settings__overview-categories overview-categories hide">
+                <div class="overview-categories__items">
+                    <div class="overview-categories__item item-overview-categories-work item-overview-categories">
+                        <div class="item-overview-categories__oval"></div>
+                        <div class="item-overview-categories__body">Work</div>
+                    </div>
+                    <div class="overview-categories__item item-overview-categories-education item-overview-categories">
+                        <div class="item-overview-categories__oval"></div>
+                        <div class="item-overview-categories__body">Education</div>
+                    </div>
+                    <div class="overview-categories__item item-overview-categories-hobby item-overview-categories">
+                        <div class="item-overview-categories__oval"></div>
+                        <div class="item-overview-categories__body">Hobby</div>
+                    </div>
+                    <div class="overview-categories__item item-overview-categories-sport item-overview-categories">
+                        <div class="item-overview-categories__oval"></div>
+                        <div class="item-overview-categories__body">Sport</div>
+                    </div>
+                    <div class="overview-categories__item item-overview-categories-other item-overview-categories">
+                        <div class="item-overview-categories__oval"></div>
+                        <div class="item-overview-categories__body">Other</div>
+                    </div>
+                </div>
+                <div class="overview-categories__buttons">
+                    <button class="overview-categories__button">Go to Tasks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="/bundle.js"></script>
+</body>
+
+</html>

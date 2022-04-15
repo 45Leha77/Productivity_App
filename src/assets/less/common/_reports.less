@@ -1,0 +1,408 @@
+@urgentColor: #F15A4A; //put to variables
+@highColor: #FEA741;
+@middleColor: #FDDC43;
+@lowColor: #1ABC9C;
+@failedColor: #8DA5B8;
+#report {
+.header {
+      .top-header__container {
+            justify-content: flex-end;
+            @media(max-width: @tablet) { 
+                  justify-content: space-between;
+            }
+      }
+.tabs-header {
+            margin-top: 40px;
+            @media(max-width: @phone) { 
+                  margin-top: 0;
+             }
+		// .tabs-header__container
+
+		&__container {
+                  width: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  padding-top: 0;
+		}
+}
+}
+.main-report {
+	&__container {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0 108px;
+                  margin-top: 141px;
+                  gap: 24.5%;
+                  @media(max-width: @tablet) { 
+                        padding: 0 44px;
+                        gap: 16%;
+                  }
+                  @media(max-width: @phone) { 
+                        padding: 0 24px;
+                        margin-top: 222px;
+                        gap: 6%;
+                   }
+	}
+	&__arrow-icon {
+                  height: 100%;
+                  .svg {
+                  width: 29.97px;
+                  height: 56.13px;
+                  color: #8DA5B8;
+            }
+	}
+	&__body {
+                  width: 80%;
+                  max-width: 560px;
+                  @media (max-width: @phone) { 
+                        width: 90%;
+                   }
+                  height: 258px; //temporary
+                  display: flex;
+                  flex-direction: column;
+                  gap: 28px;
+	}
+      &__empty {
+                  height: 100%;
+                  width: 29.97px;
+      }
+}
+.tabs-report {
+display: none;
+		// .tabs-report__container
+
+		&__container {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0 108px;
+                  margin-top: 64px;
+                  @media(max-width: @tablet) { 
+                        padding: 0 44px;
+                  }
+                  @media(max-width: @phone) { 
+                        padding: 0 24px;
+                        margin-top: 100px;
+                   }
+		}
+
+		// .tabs-report__items
+
+		&__items {
+                  display: flex;
+                  gap: 8px;
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 16px;
+                  color: #8DA5B8;
+                  cursor: pointer;
+                  @media(max-width: @phone) { 
+                        font-size: 22px;
+                        line-height: 24px;
+                  }
+		}
+
+		// .tabs-report__item
+
+		&__item {
+                  
+                  @media (any-hover: hover){
+                        &:hover{
+                              color: white;
+                        }
+                  }
+			// .tabs-report__item_active
+
+			&_active {
+                        color: white;
+			}
+		}
+}
+.main-report {
+
+		// .main-report__graph
+
+		&__graph {
+                  width: 100%;
+                  height: 90%;
+		}
+
+		// .main-report__legend
+
+		&__legend {
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: row;
+                  gap: 20px;
+                  width: 100%;
+                  height: 10%;
+                  justify-content: center;
+		}
+}
+.item-legend-main-report {
+      all: unset;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+		// .item-legend-main-report__color
+
+		&__color {
+                  width: 8px;
+                  height: 8px;
+                  &_urgent {
+                        background-color: @urgentColor;
+                  }
+                  &_high {
+                        background-color: @highColor;
+                  }
+                  &_middle {
+                        background-color: @middleColor;
+                  }
+                  &_low {
+                        background-color: @lowColor;
+                  }
+                  &_failed {
+                        background-color: @failedColor;
+                  }
+		}
+
+		// .item-legend-main-report__text
+
+		&__text {
+                  font-weight: bold;
+                  font-size: 11px;
+                  line-height: 16px;
+                  color: #8DA5B8;
+                  @media (max-width: @phone) { 
+                  font-size: 14px;
+                   }
+		}
+}
+.graph-main-report {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+		// .graph-main-report__main-part
+
+		&__main-part {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 10px;
+		}
+
+		// .graph-main-report__column-numbers
+
+		&__column-numbers {
+                  padding: 0;
+                  margin: 0;
+                  display: flex;
+                  flex-direction: column-reverse;
+                  justify-content: center;
+                  width: 3%;
+                  align-items: flex-end;
+                  text-align: start;
+                  font-size: 11px;
+                  line-height: 16px;
+                  color: #fff;
+		}
+
+		// .graph-main-report__column-number
+
+		&__column-number {
+                  list-style: none;
+                  margin-top: 22px;
+                  &:last-of-type {
+                        margin-top: 0;
+                  }
+		}
+
+		// .graph-main-report__day-graph
+
+		&__graph {
+                  width: 96%;
+                  justify-content: center;
+                  align-items: center;
+                  border-left: 1px solid  #FFFFFF;
+                  border-bottom: 1px solid  #FFFFFF;
+		}
+
+		// .graph-main-report__rows-names
+
+		&__day-rows-names {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 60px;
+                  font-weight: bold;
+                  font-size: 11px;
+                  line-height: 16px;
+                  text-transform: uppercase;
+                  color: #FFFFFF;
+                  padding-left: 50px;
+                  &-week {
+                        padding-left: 50px;
+                        gap:70px;
+                  }
+                  &-month {
+                        padding-left: 33px;
+                        font-size: 9px;
+                        line-height: 14px;
+                        gap: 0;
+                        .num {
+                              margin-right: 13.3px;
+                        }
+                        .two-num {
+                              margin-right: 8.5px;
+                        }
+                  }
+		}
+
+		// .graph-main-report__row-name
+
+		&__day-row-name {
+                  all: unset;
+                  list-style: none;
+		}
+}
+.graph {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+
+		&__row {
+                  width: 100%;
+                  height: 40px;
+                  border-top: 1px solid #345168;
+		}
+}
+.day-columns {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 30px;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row;
+		// .date-columns__item
+
+		&__item {
+                  width: 40px;
+                  max-height: 100%;
+                  margin-right: 55px;
+                  &:last-of-type {
+                        margin-right: 10px;
+                  }
+                  &_urgent {
+                        background-color: @urgentColor;
+                  }
+                  &_high {
+                        background-color: @highColor;
+                  }
+                  &_middle {
+                        background-color: @middleColor;
+                  }
+                  &_low {
+                        background-color: @lowColor;
+                  }
+                  &_failed {
+                        background-color: @failedColor;
+                  }
+		}
+}
+.week-columns {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 10px;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row;
+      gap: 6%;
+		// .week-columns__day
+
+		&__day {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: flex-end;
+                  gap: 10px;
+                  height: 100%;
+		}
+
+		// .week-columns__done
+
+		&__done {
+                  height: 100%;
+                  width: 26px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-end;
+		}
+
+		// .week-columns__failed
+
+		&__failed {
+                  display: flex;
+                  flex-direction: column;
+                  background-color: @failedColor;
+                  width: 26px;
+		}
+}
+.month-columns {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 5px;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: row;
+      gap: 2.2%;
+		// .month-columns__column
+
+		&__column {
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column-reverse;
+                  align-items: flex-start;
+                  width: 6px;
+		}
+}
+.done-column {
+		// .done-column__item
+
+		&__item {
+                  width: 100%;
+			// .done-column__item_urgent
+			&_urgent {
+                        background-color: @urgentColor;
+			}
+
+			// .done-column__item_high
+
+			&_high {
+                        background-color: @highColor;
+			}
+
+			// .done-column__item_middle
+
+			&_middle {
+                        background-color: @middleColor;
+			}
+
+			// .done-column__item_low
+
+			&_low {
+                        background-color: @lowColor;
+			}
+                  &_failed {
+                        background-color: @failedColor;
+			}
+		}
+}
+}
